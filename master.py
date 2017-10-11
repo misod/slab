@@ -11,7 +11,7 @@ def get_info(slave_id):
 
     return "info recived \n"
 
-@app.route('/slave/<int:slave_id>/<int:cpu>')
+@app.route('/slave/<int:slave_id>/<float:cpu>')
 def get_info_cpu(slave_id, cpu):
     print slave_id
     print cpu

@@ -1,5 +1,5 @@
-import requests, flask
-import psutil, time
+import requests, flask, psutil, time
+
 from random import randint
 UUID = randint(0, 10000)
 
@@ -11,4 +11,4 @@ for i in range(100):
     r = requests.get(url+cpu_in_string)
     response_json = r.json()
     print response_json
-    time.sleep(2)
+    time.sleep(1)

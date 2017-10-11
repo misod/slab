@@ -5,7 +5,7 @@ app = Flask("master")
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/post/<int:slave_id>/int:cpu>')
+@app.route('/post/<int:slave_id>/float:cpu>')
 def get_info(slave_id, cpu):
     print slave_id
     print cpu

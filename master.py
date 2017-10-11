@@ -5,10 +5,10 @@ app = Flask("master")
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/post/<int:slave_id>/float:cpu>')
-def get_info(slave_id, cpu):
+@app.route('/post/<int:slave_id>')
+def get_info(slave_id):
     print slave_id
-    print cpu
+    #print cpu
 
     return "info recived \n"
 

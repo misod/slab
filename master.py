@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 app = Flask("master")
 
 @app.route('/')
@@ -16,7 +16,7 @@ def get_info_cpu(slave_id, cpu):
     print slave_id
     print cpu
 
-    return "yheee \"
+    return jsonify("yheee \")
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0', debug=True)

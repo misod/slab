@@ -1,4 +1,4 @@
-import requests
+import requests, flask
 
 
 url = 'http://130.239.81.63:5000/slave/34/'

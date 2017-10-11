@@ -1,8 +1,10 @@
 import requests, flask
 import psutil, time
+from random import randint
+UUID = randint(0, 10000)
 
-
-url = 'http://130.239.81.63:5000/slave/34/'
+UUID_str = str(UUID)
+url = 'http://130.239.81.63:5000/slave/'+UUID_str+'/'
 for i in range(100):
     cpu = psutil.cpu_percent(interval=1, percpu=True)
     cpu_in_string = str(cpu[0])

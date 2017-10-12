@@ -28,7 +28,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 url = 'http://'+ip_to_master+':5000/slave/'+UUID_str+'/'
 print url
-for i in range(100):
+for i in range(5):
     cpu = psutil.cpu_percent(interval=5, percpu=False)
     cpu_in_string = str(cpu)
     r = requests.get(url+cpu_in_string)

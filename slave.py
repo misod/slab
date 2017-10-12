@@ -23,7 +23,7 @@ def signal_handler(signal, frame):
         time.sleep(0.5)
         sys.exit(0)
 
-signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGINT, signal_handler)
 
 
 url = 'http://'+ip_to_master+':5000/slave/'+UUID_str+'/'

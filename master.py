@@ -1,13 +1,5 @@
 from flask import Flask, jsonify
-import signal, sys
 app = Flask("master")
-
-def signal_handler(signal, frame):
-        print('quitting')
-        time.sleep(2)
-        sys.exit(0)
-
-signal.signal(signal.SIGINT, signal_handler)
 
 @app.route('/')
 def hello_world():

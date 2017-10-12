@@ -20,10 +20,10 @@ finally:
 
 def signal_handler(signal, frame):
         print('quitting')
-        time.sleep(2)
+        time.sleep(0.5)
         sys.exit(0)
 
-signal.signal(signal.SIGINT, signal_handler)
+signal(signal.SIGINT, signal_handler)
 
 
 url = 'http://'+ip_to_master+':5000/slave/'+UUID_str+'/'

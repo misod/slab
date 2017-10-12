@@ -1,4 +1,4 @@
-import requests, flask, psutil, time, re
+import requests, flask, psutil, time, re, signal, sys
 
 from random import randint
 UUID = randint(0, 100000)
@@ -12,12 +12,19 @@ try:
         for line in openFile:
             if line != '\n':
                 ip_to_master = re.sub('[^0-9.]+', '', line)
-                print ip_to_master
 except Exception as e:
     print "nu blev det GALET"
     print e
 finally:
     fileStream.close()
+
+def signal_handler(signal, frame):
+        print('quitting')
+        time.sleep(2)
+        sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
+
 
 url = 'http://'+ip_to_master+':5000/slave/'+UUID_str+'/'
 print url

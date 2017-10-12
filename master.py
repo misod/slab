@@ -1,6 +1,13 @@
 from flask import Flask, jsonify
 app = Flask("master")
 
+def signal_handler(signal, frame):
+        print('quitting')
+        time.sleep(2)
+        sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -16,6 +23,9 @@ def get_info(slave_id):
 def get_info_cpu(slave_id, cpu):
     print slave_id
     print cpu
+
+    #see if it is time for a scale up
+    #call webhook to activate action
 
     return jsonify("mottaget (y)")
 
